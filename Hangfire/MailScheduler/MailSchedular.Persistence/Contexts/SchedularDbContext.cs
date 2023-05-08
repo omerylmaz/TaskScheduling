@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MailSchedular.Domain.Entities
+namespace MailSchedular.Persistence.Contexts
 {
-    public class BaseEntity
+    public class ScheduarDbContext
     {
-        public int Id { get; set; }
+
     }
 }

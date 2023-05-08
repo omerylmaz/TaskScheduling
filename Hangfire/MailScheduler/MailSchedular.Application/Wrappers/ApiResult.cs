@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MailSchedular.Domain.ApiResult
+namespace MailSchedular.Application.Wrappers
 {
     public class ApiResult<T>
     {
