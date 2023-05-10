@@ -7,8 +7,8 @@ namespace MailSchedular.Api.Controllers
     [ApiController]
     public class MailController : ControllerBase
     {
-        [HttpGet("deneme")]
-        public async Task<IActionResult> deneme()
+        [HttpPost("mail-event")]
+        public async Task<IActionResult> AddMailEvent()
         {
             return Ok("ok");
         }

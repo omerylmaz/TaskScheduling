@@ -9,8 +9,8 @@ namespace MailSchedular.Application.Interfaces.Repositories
 {
     public interface IGenericRepository<T> where T : BaseEntity
     {
-        Task<ICollection<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
-        Task<T> AddAsync(T entity);
+        Task<bool> AddAsync(T entity);
     }
 }
