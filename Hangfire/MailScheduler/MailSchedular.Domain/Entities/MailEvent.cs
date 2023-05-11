@@ -7,7 +7,7 @@ using MailSchedular.Domain.Common;
 
 namespace MailSchedular.Domain.Entities
 {
-    public class MailMessage : BaseEntity
+    public class MailEvent : BaseEntity
     {
         public string ToMail { get; set; }
         public string Message { get; set; }
