@@ -1,4 +1,6 @@
-﻿using MailSchedular.Persistence.Contexts;
+﻿using MailSchedular.Application.Interfaces.Repositories;
+using MailSchedular.Persistence.Contexts;
+using MailSchedular.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,7 @@ namespace MailSchedular.Persistence
         {
             services.AddDbContext<SchedularDbContext>(options =>
                 options.UseInMemoryDatabase(configuration.GetConnectionString(configuration.GetConnectionString("InMemory"))));
+            services.AddScoped<IMailEventRepository, MailEventRepository>();
         }
     }
 }

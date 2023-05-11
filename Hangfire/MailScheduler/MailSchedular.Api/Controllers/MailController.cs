@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MediatR;
+using MailSchedular.Application.Features.Commands.CreateProduct;
 
 namespace MailSchedular.Api.Controllers
 {//https:/localhost:45120/api/mail/deneme
@@ -7,10 +9,16 @@ namespace MailSchedular.Api.Controllers
     [ApiController]
     public class MailController : ControllerBase
     {
-        [HttpPost("mail-event")]
-        public async Task<IActionResult> AddMailEvent()
+        readonly IMediator _mediator;
+        public MailController(IMediator mediator)
         {
-            return Ok("ok");
+            _mediator = mediator;
+        }
+        [HttpPost("mail-event")]
+        public async Task<IActionResult> AddMailEvent(CreateMailEventCommand createMailEventCommand)
+        {
+            var response = _mediator.Send(createMailEventCommand);
+            return Ok(response);
         }
     }
 }
